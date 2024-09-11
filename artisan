@@ -1,0 +1,56 @@
+#!/usr/bin/env php
+<?php
+
+use App\Application;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+
+define('LARAVEL_START', microtime(true));
+
+/*
+|--------------------------------------------------------------------------
+| Register The Composer Autoloader
+|--------------------------------------------------------------------------
+|
+| We'll need to require the Composer autoloader so that we can load all of
+| the classes for the application. This will provide a convenient way to
+| access all of the Laravel components for the application.
+|
+*/
+
+require_once __DIR__.'/vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Create The Application
+|--------------------------------------------------------------------------
+|
+| Here we will load the environment and set the default timezone for
+| the application and create the application instance that serves as
+| the central piece of this framework. We'll use this application
+| as an "IoC" container.
+|
+*/
+
+Application::loadEnvironmentVariables();
+Application::setDefaultTimezone();
+$app = Application::createApp();
+
+/*
+|--------------------------------------------------------------------------
+| Run The Artisan Application
+|--------------------------------------------------------------------------
+|
+| When we run the console application, the current CLI command will be
+| executed in this console and the response sent back to a terminal
+| or another output device for the developers. Here goes nothing!
+|
+*/
+
+$kernel = $app->make(
+    'Illuminate\Contracts\Console\Kernel'
+);
+
+$status = $kernel->handle(new ArgvInput, new ConsoleOutput);
+
+exit($status);

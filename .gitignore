@@ -1,0 +1,14 @@
+/storage/*.key
+/vendor
+composer.lock
+.env
+.env.backup
+.env.production
+.phpactor.json
+Homestead.json
+Homestead.yaml
+auth.json
+/.fleet
+/.idea
+/.vscode
+/.zed

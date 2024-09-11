@@ -1,0 +1,101 @@
+{
+    "name": "seyyedmohammadn/laravel-console",
+    "type": "project",
+    "description": "The skeleton application for the Laravel-Console framework.",
+    "keywords": ["laravel", "framework", "console", "laravel-console"],
+    "license": "MIT",
+    "homepage": "https://laravel-console.seyyedmohammad.ir",
+    "support": {
+        "issues": "https://github.com/seyyedmohammadn/laravel-console/issues",
+        "source": "https://github.com/seyyedmohammadn/laravel-console"
+    },
+    "authors": [
+        {
+            "name": "Seyyed Mohammad Narimani",
+            "email": "seyyedmohammad@iCloud.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-pcntl": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "ext-posix": "*",
+        "ext-redis": "*",
+        "composer-runtime-api": "~2",
+        "fakerphp/faker": "~1",
+        "guzzlehttp/guzzle": "~7",
+        "illuminate/bus": "~11",
+        "illuminate/cache": "~11",
+        "illuminate/collections": "~11",
+        "illuminate/config": "~11",
+        "illuminate/console": "~11",
+        "illuminate/container": "~11",
+        "illuminate/contracts": "~11",
+        "illuminate/database": "~11",
+        "illuminate/encryption": "~11",
+        "illuminate/events": "~11",
+        "illuminate/filesystem": "~11",
+        "illuminate/hashing": "~11",
+        "illuminate/macroable": "~11",
+        "illuminate/pipeline": "~11",
+        "illuminate/queue": "~11",
+        "illuminate/support": "~11",
+        "illuminate/translation": "~11",
+        "illuminate/validation": "~11",
+        "illuminate/log": "~11",
+        "dragonmantank/cron-expression": "~3",
+        "laravel/prompts": "~0",
+        "laravel/tinker": "~2",
+        "nikic/fast-route": "~1",
+        "symfony/console": "~7",
+        "symfony/error-handler": "~7",
+        "symfony/mime": "~7",
+        "symfony/var-dumper": "~7",
+        "vlucas/phpdotenv": "~5"
+    },
+    "require-dev": {},
+    "suggest": {
+        "ext-parallel": "Required to use parallel processing features.",
+        "nyholm/psr7": "Required to use PSR-7 bridging features (^1.2).",
+        "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "classmap": [],
+        "files": [
+            "app/helpers.php"
+        ],
+        "exclude-from-classmap": [
+            "app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {},
+        "classmap": [],
+        "files": []
+    },
+    "scripts": {
+        "post-autoload-dump": [],
+        "post-update-cmd": [],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": []
+    },
+    "extra": {},
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {}
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
